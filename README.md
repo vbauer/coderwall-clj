@@ -36,24 +36,30 @@ The client has 2 simple methods:
 
 ### user-url [user-name]
 
-Example of usage:
+To build API URL for user, use the following code:
 ```clojure
 (coderwall/user-url "vbauer")
+
+; It is also possible to use keyword as username:
+(coderwall/user-url :vbauer)
 ```
 
-Result:
+Result output:
 ```clojure
 "https://coderwall.com/vbauer.json"
 ```
 
 ### user-data [user-name]
 
-Example of usage:
+To fetch full information about user, use:
 ```clojure
 (coderwall/user-data "vbauer")
+
+; It is also possible to use keyword as username:
+(coderwall/user-data :vbauer)
 ```
 
-Result:
+Result output:
 ```clojure
 { :name "Vladislav Bauer"
   :username "vbauer"
@@ -79,6 +85,11 @@ Result:
   :about "If you can dream it, you can do it." }
 ```
 
+To fetch short information about user without extra details:
+```clojure
+(coderwall/user-data :vbauer false)
+```
+
 
 ## Might also like
 
@@ -93,6 +104,6 @@ Result:
 
 ## License
 
-Copyright © 2014 Vladislav Bauer
+Copyright © 2015 Vladislav Bauer
 
 Distributed under the Eclipse Public License, the same as Clojure.
