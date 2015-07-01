@@ -22,7 +22,7 @@
    (user-data user-name true))
   ([user-name full]
    (let [url (user-url user-name)
-         response (http/get url HTTP_CONFIG)]
+         query-params {:query-params {:full full}}
+         config (merge HTTP_CONFIG query-params)
+         response (http/get url config)]
      (:body response))))
-
-(user-data :vbauer)
