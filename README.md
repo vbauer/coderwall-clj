@@ -90,6 +90,17 @@ To fetch short information about user without extra details:
 (coderwall/user-data :vbauer false)
 ```
 
+To override HTTP client configuration:
+```clojure
+(coderwall/user-data
+ :vbauer true
+ { :as :json
+   :accept :json
+   :insecure? true
+   :socket-timeout 60000
+   :conn-timeout 60000 })
+```
+
 
 ## Might also like
 

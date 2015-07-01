@@ -3,9 +3,9 @@
   (:require [clj-http.client :as http]))
 
 
-(def ^:dynamic API_URL "https://coderwall.com/")
-(def ^:dynamic FORMAT ".json")
-(def ^:dynamic HTTP_CONFIG
+(def ^:dynamic DEF_API_URL "https://coderwall.com/")
+(def ^:dynamic DEF_FORMAT ".json")
+(def ^:dynamic DEF_HTTP_CONFIG
   {:as :json
    :accept :json
    :insecure? true
@@ -15,14 +15,16 @@
 
 
 (defn user-url [user-name]
-  (str API_URL (name user-name) FORMAT))
+  (str DEF_API_URL (name user-name) DEF_FORMAT))
 
 (defn user-data
   ([user-name]
    (user-data user-name true))
-  ([user-name full]
+  ([user-name full?]
+   (user-data user-name full? DEF_HTTP_CONFIG))
+  ([user-name full? http-config]
    (let [url (user-url user-name)
-         query-params {:query-params {:full full}}
-         config (merge HTTP_CONFIG query-params)
+         query-params {:query-params {:full full?}}
+         config (merge http-config query-params)
          response (http/get url config)]
      (:body response))))
