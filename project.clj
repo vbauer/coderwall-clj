@@ -1,4 +1,4 @@
-(defproject coderwall-clj "0.1.0-SNAPSHOT"
+(defproject coderwall-clj "0.1.0"
   :description "CoderWall client for Clojure"
   :url "https://github.com/vbauer/coderwall-clj"
   :license {:name "Eclipse Public License"
