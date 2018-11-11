@@ -9,7 +9,7 @@
 
 (deftest test-user-data
   (testing "Check user-data function"
-    (let [data (coderwall/user-data "vbauer" true)]
-      (is (not (nil? data)))
-      (is (:username data) "vbauer")
-      (is (:name data) "Vladislav Bauer"))))
+    (let [data (coderwall/user-data "vbauer" true)
+          user (:user data)]
+      (is (:username user) "vbauer")
+      (is (:name user) "Vladislav Bauer"))))
