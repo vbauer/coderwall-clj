@@ -12,7 +12,8 @@ Tiny Clojure client library for [coderwall.com](https://coderwall.com) REST [API
 To add it into your project, put the following line in the `:dependencies` vector in your `project.clj` file:
 
 ```clojure
-:dependencies [[coderwall-clj "0.1.0"]]
+; Use latest version instead of "X.X.X"
+:dependencies [[coderwall-clj "X.X.X"]]
 ```
 
 
@@ -65,28 +66,65 @@ To fetch full information about user, use:
 
 Result output:
 ```clojure
-{ :name "Vladislav Bauer"
-  :username "vbauer"
-  :title ""
-  :specialities []
-  :thumbnail "https://coderwall-assets-0.s3.amazonaws.com/uploads/user/avatar/105055/52a677364752793dda3929cf8e4975ce.jpeg"
-  :team nil
-  :badges [ { :name "Lemmings 100"
-              :description "Write something great enough to have at least 100 watchers of the project"
-              :created "2014-06-11T19:27:37Z"
-              :badge "https://d3levm2kxut31z.cloudfront.net/assets/badges/100lemming-312e3bc30f6814302412a3ec1dcf7896.png" }
-            { :name "Forked 100"
-              :description "Have a seriously badass project that's been forked at least 100 times"
-              :created "2014-06-11T19:27:37Z"
-              :badge "https://d3levm2kxut31z.cloudfront.net/assets/badges/forked100-0e5ee0a84ad371c85ba66246a3952f75.png" }
-            ; etc.
-          ]
-  :endorsements 0
-  :location "Russia, Novosibirsk"
-  :accounts { :github "vbauer"
-              :twitter "BauerVlad" }
-  :company ""
-  :about "If you can dream it, you can do it." }
+{:user
+ {:name "Vladislav Bauer",
+  :username "vbauer",
+  :karma 119,
+  :title "",
+  :specialities [],
+  :thumbnail
+  "https://coderwall-assets-0.s3.amazonaws.com/uploads/user/avatar/105055/52a677364752793dda3929cf8e4975ce.jpeg",
+  :team nil,
+  :id 105055,
+  :badges
+  [{:name "Lemmings 100",
+    :description
+    "Write something great enough to have at least 100 watchers of the project",
+    :created_at "2014-06-11T19:27:37.729Z",
+    :badge
+    "https://d1ujcb8mxkwm85.cloudfront.net/assets/badges/100lemming-75ef69b417fed814e00911c952268ec8f46e670b2b7f1d3197e95e531530c5f3.png"}
+   {:name "Forked 100",
+    :description
+    "Have a seriously badass project that's been forked at least 100 times",
+    :created_at "2014-06-11T19:27:37.465Z",
+    :badge
+    "https://d1ujcb8mxkwm85.cloudfront.net/assets/badges/forked100-eb3235ebeb00483ef070677bead3e2c4037d5b3f9197d3f6c524a0b0bf185587.png"}
+   {:name "Mongoose 3",
+    :description
+    "Have at least three original repos where Ruby is the dominant language",
+    :created_at "2014-06-11T19:27:36.496Z",
+    :badge
+    "https://d1ujcb8mxkwm85.cloudfront.net/assets/badges/mongoose3-3c4898df9b91ea4bec8bce0c83908998df630cbbf749d2dcfadba121af2bf1fa.png"}
+   {:name "Narwhal 3",
+    :description
+    "Have at least three original repos where Clojure is the dominant language",
+    :created_at "2014-06-11T19:27:36.232Z",
+    :badge
+    "https://d1ujcb8mxkwm85.cloudfront.net/assets/badges/narwhal3-847117acebb115e6af72745807626e70f2fd591c45dc5d32caef41fbd0297029.png"}
+   {:name "Walrus",
+    :description
+    "The walrus is no stranger to variety. Use at least 4 different languages throughout all your repos",
+    :created_at "2014-04-18T14:41:59.288Z",
+    :badge
+    "https://d1ujcb8mxkwm85.cloudfront.net/assets/badges/walrus-1f517cbbd8f030099b8386c53d4ee40fece3fa146b6362accb3abddb436482cb.png"}
+   {:name "Komodo Dragon",
+    :description
+    "Have at least one original repo where Java is the dominant language",
+    :created_at "2014-04-12T16:53:40.176Z",
+    :badge
+    "https://d1ujcb8mxkwm85.cloudfront.net/assets/badges/komododragon-4a367331904f40950f6ad91fe236c48eec07fe8e0087471dbf7a17c6c6ed7923.png"}
+   {:name "Charity",
+    :description
+    "Fork and commit to someone's open source project in need",
+    :created_at "2014-04-12T16:53:39.855Z",
+    :badge
+    "https://d1ujcb8mxkwm85.cloudfront.net/assets/badges/charity-bab6d575c53894cc9e395db7cdb1f0f91f176fa0cc8122c5f824e672f3d556a4.png"}],
+  :endorsements 119,
+  :location "Russia, Novosibirsk",
+  :accounts {:github "vbauer", :twitter "BauerVlad"},
+  :company "",
+  :about
+  "If you can dream it, you can do it.\n\n\n[LinkedIn](http://www.linkedin.com/in/vladislavbauer) [Blog](http://twitter.com/BauerVlad) [Bitbucket](https://bitbucket.org/vbauer) [StackOverflow](http://stackoverflow.com/users/847626)\n\n"}}
 ```
 
 To fetch short information about user without extra details:

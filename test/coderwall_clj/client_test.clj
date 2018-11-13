@@ -11,5 +11,8 @@
   (testing "Check user-data function"
     (let [data (coderwall/user-data "vbauer" true)
           user (:user data)]
+      ;; For debugging purpose
+      ;; (clojure.pprint/pprint data)
       (is (:username user) "vbauer")
-      (is (:name user) "Vladislav Bauer"))))
+      (is (:name user) "Vladislav Bauer")
+      (is (:id user) 105055))))
