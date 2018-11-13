@@ -1,7 +1,7 @@
 # coderwall-clj
 
 [![Build Status](https://travis-ci.org/vbauer/coderwall-clj.svg?branch=master)](https://travis-ci.org/vbauer/coderwall-clj)
-[![Dependencies Status](http://jarkeeper.com/vbauer/coderwall-clj/status.png)](http://jarkeeper.com/vbauer/coderwall-clj)
+[![Clojars Project](https://img.shields.io/clojars/v/coderwall-clj.svg)](https://clojars.org/coderwall-clj)
 
 Tiny Clojure client library for [coderwall.com](https://coderwall.com) REST [API](https://coderwall.com/api).
 
@@ -11,7 +11,9 @@ Tiny Clojure client library for [coderwall.com](https://coderwall.com) REST [API
 **coderwall-clj** is available as a Maven artifact from [Clojars](https://clojars.org).
 To add it into your project, put the following line in the `:dependencies` vector in your `project.clj` file:
 
-![latest-version](https://clojars.org/coderwall-clj/latest-version.svg)
+```clojure
+:dependencies [[coderwall-clj "0.1.0"]]
+```
 
 
 ## Usage
@@ -34,6 +36,7 @@ The client has 2 simple methods:
 * **user-url** to retrieve API URL.
 * **user-data** to fetch information about user.
 
+
 ### user-url [user-name]
 
 To build API URL for user, use the following code:
@@ -48,6 +51,7 @@ Result output:
 ```clojure
 "https://coderwall.com/vbauer.json"
 ```
+
 
 ### user-data [user-name]
 
